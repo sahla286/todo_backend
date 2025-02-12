@@ -18,5 +18,5 @@ class UserSerializer(serializers.ModelSerializer):
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ["id", "title", "description", "status", "due_date", "user"]
-        extra_kwargs = {"user": {"read_only": True}}  # ✅ Ensure user is read-only
+        fields="__all__"
+        extra_kwargs = {"user": {"read_only": True}}  
