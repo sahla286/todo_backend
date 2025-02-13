@@ -64,28 +64,26 @@ python manage.py migrate
 6. Start the Server
 python manage.py runserver
 
+## API Endpoints
+- Authentication:
+  - `POST /user/` → User registration
+  - `POST /tokenpair/` → User login (Token access)
+  - `POST /refreshtoken/` → Refresh expired tokens
 
- ## API Endpoints
-   - Authentication:
-      - `POST /user/` → User registration
-      - `POST /tokenpair/` → User login (Token access)
-      - `POST /refreshtoken/` → Refresh expired tokens
-
- → Task Management:
+- Task Management:
   - `GET /task/tasks/` → List all tasks (with sorting & filtering)
   - `GET /task/tasks/{id}/` → Retrieve a specific task
   - `POST /task/tasks/` → Create a new task
   - `PUT /task/tasks/{id}/` → Update task details
   - `DELETE /task/tasks/{id}/` → Delete a task
 
- →Calendar:
-  - `GET /task/calendar-tasks/` → Get tasks in calendar format
+- Calendar:
+   - `GET /task/calendar-tasks/` → Get tasks in calendar format
 
- → JWT Authentication:
-- Add `Authorization: Bearer <access_token>` in the request header
+- JWT Authentication:
+   - Add `Authorization: Bearer <access_token>` in the request header
 
 Note: Add the access_token in the Authorization header as:
-
 Authorization: Bearer <access_token>
 
 
@@ -93,7 +91,7 @@ Authorization: Bearer <access_token>
 Use JWT authentication for secure access.Add 'rest_framework_simplejwt' in installed apps, specify authentication_classes
 and permission_classes in views.py
 
-##Testing API Endpoints
+## Testing API Endpoints
 Test the server using Postman or Thunder Client.
 
 - `POST http://127.0.0.1:8000/user/` → User Registration
