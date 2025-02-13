@@ -13,7 +13,7 @@ TaskManager Backend (Django DRF)
    - Status (Pending, In Progress, Completed)
    - Due Date (Required)
 
-#Error handling
+## Error handling
 
 Validate required fields & correct formats
 Handle 404 errors (task not found)
@@ -22,7 +22,7 @@ JWT authentication for user session management
 SQL Injection prevention → Django ORM & parameterized queries
 CORS support
 
-TaskManager - Setup & Deployment Guide
+## TaskManager - Setup & Deployment Guide
 
 Prerequisites:
 Python 
@@ -31,7 +31,7 @@ React
 MySQL Server
 Git
 
-Backend Setup (Django REST Framework)
+## Backend Setup (Django REST Framework)
 1. Clone the Repository
 git clone [repository_url]
 cd [project_directory]
@@ -65,7 +65,7 @@ python manage.py migrate
 python manage.py runserver
 
 
- ##API Endpoints
+ ## API Endpoints
    - Authentication:
       - `POST /user/` → User registration
       - `POST /tokenpair/` → User login (Token access)
