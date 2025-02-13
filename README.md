@@ -17,10 +17,13 @@ TaskManager Backend (Django DRF)
 
 Validate required fields & correct formats
 Handle 404 errors (task not found)
+Secure API endpoints against SQL Injection & XSS
 JWT authentication for user session management
 
 SQL Injection prevention → Django ORM & parameterized queries
+XSS prevention → bleach.clean(value) in the serializer
 CORS support
+
 
 ## TaskManager - Setup & Deployment Guide
 
@@ -41,7 +44,7 @@ python -m virtualenv venv
 venv\scripts\activate
 
 3. Install Dependencies
-pip install django djangorestframework django-filter djangorestframework-simplejwt mysqlclient django-cors-headers
+pip install django djangorestframework django-filter djangorestframework-simplejwt mysqlclient django-cors-headers bleach
 
 4. Configure Database
 Update settings.py with your MySQL database credentials:
