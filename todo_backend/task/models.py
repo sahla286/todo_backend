@@ -10,7 +10,6 @@ class Task(models.Model):
         ('completed', 'Completed'),
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     title=models.CharField(max_length=255)
     description=models.TextField(blank=True, null=True)
     status=models.CharField(max_length=20, choices=choice, default='pending')

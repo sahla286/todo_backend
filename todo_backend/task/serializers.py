@@ -10,10 +10,6 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self,validated_data):
         return User.objects.create_user(**self.validated_data)
 
-# class TaskSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Task
-#         fields = '__all__'
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
