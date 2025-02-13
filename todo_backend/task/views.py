@@ -312,6 +312,26 @@ class TaskViewSet(ModelViewSet):
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)
 
+# @api_view(['GET'])
+# @authentication_classes([JWTAuthentication])
+# @permission_classes([permissions.IsAuthenticated])
+# def calendar_tasks(request):
+#     """
+#     Retrieve tasks formatted for FullCalendar.js
+#     """
+#     tasks = Task.objects.filter(user=request.user)
+#     task_list = [
+#         {
+#             "id": task.id,
+#             "title": task.title,
+#             "start": task.due_date.strftime("%Y-%m-%d"),
+#             "status": task.status
+#         }
+#         for task in tasks
+#     ]
+#     return Response(task_list)
+
+
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([permissions.IsAuthenticated])
@@ -324,7 +344,9 @@ def calendar_tasks(request):
         {
             "id": task.id,
             "title": task.title,
+            "description": task.description,
             "start": task.due_date.strftime("%Y-%m-%d"),
+            "due_date": task.due_date.strftime("%Y-%m-%d"),
             "status": task.status
         }
         for task in tasks
